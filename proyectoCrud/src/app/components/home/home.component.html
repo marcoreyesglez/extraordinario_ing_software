@@ -1,12 +1,19 @@
 <app-header></app-header>
 <div class="row">
   <div class="col-md-12">
-    <img src="../assets/images/fondo.jpg" class="fondo" alt="">
-    <div class="portadaElements nombreUniversidad"><h1>Universidad Nacional Autonoma de México</h1></div>
-    <div class="portadaElements nombreFacultad"><h1>Facultad de Estudios Superiores Aragon</h1></div>
-    <div class="portadaElements nombreAlumno"><h1>Alumno: Reyes González Marco Antonio</h1></div>
-    <div class="portadaElements nombreTrabajo"><h1>Extraordinario Ingeniería de software II</h1></div>
-    <button type="button" class="btn btn-success portadaElements buttonProject" [routerLink]="['../consulta']">Ir a proyecto</button>  
-    <button type="button" class="btn btn-primary portadaElements buttonDocumentation">Descargar documentación</button>  
+    <!-- <img src="../assets/images/fondo.jpg" class="fondo" alt=""> -->
+    <div class="text-center"><h1>Universidad Nacional Autonoma de México</h1></div>
+    <div class="text-center"><h1>Facultad de Estudios Superiores Aragon</h1></div><br>
+    <div><h2>Alumno: Reyes González Marco Antonio</h2></div>
+    <div><h2>Extraordinario Ingeniería de software II</h2></div>
+    <div><h2>Profesor: Aaron Velasco Agustin</h2></div><br>
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <button type="button" class="btn btn-success" [routerLink]="['../consulta']">Ir al proyecto</button>  
+      </div>
+      <div class="col-md-6 text-center">
+        <button type="button" class="btn btn-primary">Descargar documentación</button>  
+      </div>
+    </div>
   </div>
 </div>
