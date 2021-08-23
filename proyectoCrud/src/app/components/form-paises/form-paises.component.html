@@ -1,0 +1,73 @@
+<app-header></app-header>
+<div class="container-xxl">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>{{title}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="paisForm" (ngSubmit)="guardarInformacion()">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="pais_nombre">Nombre del país</label>
+                            <input formControlName="paisNombre" class="form-control" id="pais_nombre"
+                                placeholder="Nombre del país" type="text" required>
+                            <span class="invalidText" *ngIf="f.paisNombre.invalid && f.paisNombre.touched">
+                                Ingresa un nombre del país
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="pais_codigo">Código del país</label>
+                            <input formControlName="paisCodigo" class="form-control" id="pais_codigo"
+                                placeholder="Código del país" type="text" required>
+                            <span class="invalidText" *ngIf="f.paisCodigo.invalid && f.paisCodigo.touched">
+                                Ingresa el código del país
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="pais_capital">Capital del país</label>
+                            <input formControlName="paisCapital" class="form-control" id="pais_capital"
+                                placeholder="Capital del país" type="text" required>
+                            <span class="invalidText" *ngIf="f.paisCapital.invalid && f.paisCapital.touched">
+                                Ingresa la capital del país
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="pais_moneda">Moneda</label>
+                            <input formControlName="paisMoneda" class="form-control" id="pais_moneda"
+                                placeholder="Moneda del país" type="text" required>
+                            <span class="invalidText" *ngIf="f.paisMoneda.invalid && f.paisMoneda.touched">
+                                Ingresa un nombre del país
+                            </span>
+                        </div>
+                        <div class="form-group " rel="1">
+                            <label class="control-label" for="">Selecciona el idioma</label>
+                            <select  formControlName="paisIdioma"  class="form-control"  >
+                              <option hidden value="" disabled  selected>Selecciona una opción</option>
+                              <option  [value]="idioma.idioma_id" *ngFor="let idioma of idiomas">{{idioma.idioma}}</option>
+                            </select>
+                            <span class="invalidText" *ngIf="f.paisIdioma.invalid && f.paisIdioma.touched">
+                              Selecciona un idioma
+                            </span>
+                          </div>
+                        <div class="form-group " rel="1">
+                            <label class="control-label" for="">Selecciona el continente</label>
+                            <select  formControlName="paisContinente"  class="form-control"  >
+                              <option hidden value="" disabled  selected>Selecciona una opción</option>
+                              <option  [value]="continente.continente_id" *ngFor="let continente of continentes">{{continente.continente_nombre}}</option>
+                            </select>
+                            <span class="invalidText" *ngIf="f.paisContinente.invalid && f.paisContinente.touched">
+                              Selecciona un continente
+                            </span>
+                          </div><br>
+                        <button type="submit" class="btn btn-success pull-right">Guardar información</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

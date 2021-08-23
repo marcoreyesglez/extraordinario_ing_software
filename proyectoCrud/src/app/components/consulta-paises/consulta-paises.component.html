@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-md-12">
+        <h4>{{title}}</h4>
+        <button type="button" class="btn btn-success paisNuevo" [routerLink]="['../nuevo']"><i class="fa fa-plus" aria-hidden="true"></i> Agregar un nuevo país</button>
+        <button type="button" class="btn btn-primary pull-right" [routerLink]="['../home']"><i class="fa fa-caret-right" aria-hidden="true"></i> Ver portada</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">Número</th>
+                    <th class="text-center">País</th>
+                    <th class="text-center">Código</th>
+                    <th class="text-center">Capital</th>
+                    <th class="text-center">Moneda</th>
+                    <th class="text-center">Idioma</th>
+                    <th class="text-center">Continente</th>
+                    <th class="text-center">Edita</th>
+                    <th class="text-center">Elimina</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pais of paises; let i = index">
+                    <td class="text-center">{{i +1 }}</td>
+                    <td class="text-center">{{pais.pais_nombre}}</td>
+                    <td class="text-center">{{pais.codigo}}</td>
+                    <td class="text-center">{{pais.capital}}</td>
+                    <td class="text-center">{{pais.moneda}}</td>
+                    <td class="text-center">{{pais.idioma}}</td>
+                    <td class="text-center">{{pais.continente_nombre}}</td>
+                    <td class="text-center"><button type="button" class="btn btn-info" [routerLink]="['../edita/'+pais.pais_id]"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>
+                    <td class="text-center"><button type="button" class="btn btn-danger" (click)="eliminaPais(i, pais.pais_id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

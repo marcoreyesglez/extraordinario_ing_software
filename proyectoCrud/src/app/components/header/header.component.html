@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="pos-f-t">
+            <nav class="navbar navbar-dark bg-dark">
+                <button *ngIf="!pais_id" class="btn btn-dark" type="button" routerLink="../consulta">
+                    <span><i class="fa fa-home" aria-hidden="true"></i></span>
+                </button>
+                <button *ngIf="pais_id" class="btn btn-dark" type="button" routerLink="../../consulta">
+                    <span><i class="fa fa-home" aria-hidden="true"></i></span>
+                </button>
+            </nav>
+        </div>
+    </div>
+</div>
