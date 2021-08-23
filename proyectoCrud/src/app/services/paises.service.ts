@@ -13,29 +13,29 @@ export class PaisesService {
   }
 
   consultaPaises() {
-    return this._httpClient.get('https://localhost/extraordinario/apiCrud/consultaPaises.php');
+    return this._httpClient.get('https://localhost/extraordinario_ing_software/apiCrud/consultaPaises.php');
   }
 
   consultaIdiomas() {
-    return this._httpClient.get('https://localhost/extraordinario/apiCrud/consultaCatIdioma.php');
+    return this._httpClient.get('https://localhost/extraordinario_ing_software/apiCrud/consultaCatIdioma.php');
   }
 
   consultaEspecificaPais(pais_id: any) {
     var params = '?pais_id='+pais_id;
-    return this._httpClient.get('https://localhost/extraordinario/apiCrud/consultaEspecifica.php'+params);
+    return this._httpClient.get('https://localhost/extraordinario_ing_software/apiCrud/consultaEspecifica.php'+params);
   }
   
   consultaContinentes() {
-    return this._httpClient.get('https://localhost/extraordinario/apiCrud/consultaCatContinente.php');
+    return this._httpClient.get('https://localhost/extraordinario_ing_software/apiCrud/consultaCatContinente.php');
   }
   
   guardaInformacion() {
-    return this._httpClient.get('https://localhost/extraordinario/apiCrud/crea.php');
+    return this._httpClient.get('https://localhost/extraordinario_ing_software/apiCrud/crea.php');
   }
   
   elimina(pais_id:any) {
     var params = '?pais_id='+pais_id;
-    return this._httpClient.get('https://localhost/extraordinario/apiCrud/elimina.php'+params);
+    return this._httpClient.get('https://localhost/extraordinario_ing_software/apiCrud/elimina.php'+params);
   }
 
   modificaPaises(pais_id: any, formPais: any) {
@@ -48,10 +48,10 @@ export class PaisesService {
     formData.append('paisContinente', formPais.get('paisContinente').value);
 
     if (pais_id == null) {// INSERTA UN NUEVO REGISTRO
-      return this._httpClient.post('https://localhost/extraordinario/apiCrud/crea.php', formData);
+      return this._httpClient.post('https://localhost/extraordinario_ing_software/apiCrud/crea.php', formData);
     } else {
       formData.append('pais_id', pais_id);
-      return this._httpClient.post('https://localhost/extraordinario/apiCrud/edita.php', formData);
+      return this._httpClient.post('https://localhost/extraordinario_ing_software/apiCrud/edita.php', formData);
     }
   }
 }
