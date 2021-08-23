@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS ing_software;
+use ing_software;
+
 DROP TABLE IF EXISTS `cat_continentes`;
 CREATE TABLE `cat_continentes` (
   `continente_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -42,5 +45,3 @@ INSERT INTO `paises` (pais_nombre, codigo, moneda, capital, idioma_id, continent
 ('Colombia','COL','Pesos colombianos', 'Bogotá', '1', '1'),
 ('Francia','FR','Euro', 'París', '3', '2'),
 ('Japón','JP','Yen', 'Tokio', '4', '3');
-
-
